@@ -5,22 +5,6 @@ const urlUsuario = 'https://reqres.in/api/users?page=2';
 const cloudPreset = 'ml_default';
 const cloudURL = 'https://api.cloudinary.com/v1_1/nenum/upload';
 
-const obtenerChiste= async ()=>{
-
-    try {
-        const resp = await fetch(chuckUrl);
-
-        if(!resp.ok) throw('No se pudo realizar la peticion');
-
-        const {icon_url, id, value} = await resp.json();
-
-        return {icon_url, id, value};
-        
-    } catch (err) {
-        throw err;
-    }
-    
-}
 
 const obtenerUsuarios = async()=>{
     const resp = await fetch(urlUsuario);
@@ -55,7 +39,6 @@ const subirImagen = async(archivo) =>{
 }
 
 export{
-    obtenerChiste,
     obtenerUsuarios,
     subirImagen
 }
